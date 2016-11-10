@@ -1,0 +1,13 @@
+#data files
+*.hdf5
+*.dat
+
+#compiled source
+*.pyc
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
