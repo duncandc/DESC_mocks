@@ -18,14 +18,14 @@ from halotools import sim_manager
 def main():
     
     #filenames and filepaths
-    input_fname = 'hlist_1.00000.list'
-    output_fname = input_fname+'.hdf5'
+    input_fpath = './data/MassiveBlack/'
+    output_fpath = './data/MassiveBlack/'
+    
     if len(sys.argv)==1:
-        input_fpath = './data/MassiveBlack/'
-        output_fpath = './data/MassiveBlack/'
+        input_fname = 'hlist_1.00000.list'
     else:
-        input_fpath = sys.argv[1]
-        output_fpath = sys.argv[2]
+        input_fname =  sys.argv[1]
+    output_fname = input_fname+'.hdf5'
     
     #set some properties of the simulation
     scale_factor = float(re.findall("\d+\.\d+",input_fname)[0])
