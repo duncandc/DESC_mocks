@@ -27,19 +27,19 @@ def main():
     np.random.seed(seed=0)
     
     #define mock parameters
-    redshift = 0.0
+    redshift = 0.0 #0.0, 0.0750029562581298, 0.745566261695294
     prim_haloprop_key = 'halo_vpeak'
     secondary_haloprop_key = 'halo_half_mass_scale'
-    stellar_mass_function = 'Illustris' #'LiWhite_2009', 'MBII', 'Illustris'
+    stellar_mass_function = 'LiWhite_2009' #'LiWhite_2009', 'MBII', 'Illustris', 'Tomczak_2014'
     log_min_mstar = 8.5
     sigma_smhm = 0.15
     
     savepath = dir_path + 'data/mocks/'
-    savename = 'yale_cam_age_matching_'+stellar_mass_function + '_z'+str(redshift)
+    savename = 'yale_cam_age_matching_'+stellar_mass_function + '_z'+"{:.2f}".format(redshift)
     print(savename)
     
     #load halo catalogue
-    filename = 'data/MassiveBlack/MassiveBlack_100.hdf5'
+    filename = 'data/MassiveBlack/hlist_'+"{:.5f}".format(1.0/(1.0+redshift))+'.list.hdf5'
     fname = dir_path + filename
     halocat = convert_to_halocat(fname)
     print('\n halo catalogue columns:')
