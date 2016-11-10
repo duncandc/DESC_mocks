@@ -11,6 +11,7 @@ import numpy as np
 
 import h5py
 import sys
+import re
 
 from halotools import sim_manager
 
@@ -18,7 +19,7 @@ def main():
     
     #filenames and filepaths
     input_fname = 'hlist_1.00000.list'
-    output_fname = 'MassiveBlack_100.hdf5'
+    output_fname = input_fname+'.hdf5'
     if len(sys.argv)==1:
         input_fpath = './data/MassiveBlack/'
         output_fpath = './data/MassiveBlack/'
@@ -27,7 +28,8 @@ def main():
         output_fpath = sys.argv[2]
     
     #set some properties of the simulation
-    redshift = 0.0
+    scale_factor = float(re.findall("\d+\.\d+",input_fname)[0])
+    redshift = 1.0/scale_factor - 1.0
     Lbox = 100.0 # h^-1 Mpc
     particle_mass = 1.1*10**7 # h^-1 Msol
     simname = 'MassiveBlack_100'
