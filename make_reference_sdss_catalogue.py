@@ -34,8 +34,12 @@ def main():
     #to those I want to use in the construction of the mock
     key_translation = {'stellar_mass':'sm_MEDIAN',
                        'ssfr':'sfr_MEDIAN',
+                       'absmag_u':'ABSMAG_u.none.model.z0.00',
                        'absmag_g':'ABSMAG_g.none.model.z0.00',
-                       'absmag_r':'ABSMAG_r.none.model.z0.00'}
+                       'absmag_r':'ABSMAG_r.none.model.z0.00',
+                       'absmag_i':'ABSMAG_i.none.model.z0.00',
+                       'absmag_z':'ABSMAG_z.none.model.z0.00',
+                       }
     
     #define cosmology
     cosmo = FlatLambdaCDM(H0=100, Om0=0.3)
